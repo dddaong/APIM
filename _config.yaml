@@ -37,7 +37,7 @@ plainwhite:
   #  - title: NGINX+ Ingress Controller
   #    url: "/nginxinc"
   #  - title: NGINX Controller + APIM
-  #    url: "/nginxapim"
+  #    url: "https://dddaong.github.io/APIM/"
 
   search: true
   sitemap: true
