@@ -34,10 +34,12 @@ plainwhite:
   #navigation:
     - title: Administrate BIG-IP
       url: "/bigip"
-  #  - title: NGINX+ Ingress Controller
-  #    url: "/nginxinc"
-  #  - title: NGINX Controller + APIM
-  #    url: "https://dddaong.github.io/APIM/"
+      #url: "https://dddaong.github.io/bigip/"
+    - title: NGINX+ Ingress Controller
+      url: "/nginxinc"
+      #url: "https://dddaong.github.io/nginxinc/"
+    - title: NGINX Controller + APIM
+      url: "https://dddaong.github.io/APIM/"
 
   search: true
   sitemap: true
