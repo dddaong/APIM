@@ -31,19 +31,19 @@ plainwhite:
     #gitlab: Don'tHave
     #email: Don'tHave
 
-  navigation:
+  #navigation:
     - title: Administrate BIG-IP
       url: "/bigip"
-    - title: NGINX+ Ingress Controller
-      url: "/nginxinc"
-    - title: NGINX Controller + APIM
-      url: "/nginxapim"
+  #  - title: NGINX+ Ingress Controller
+  #    url: "/nginxinc"
+  #  - title: NGINX Controller + APIM
+  #    url: "/nginxapim"
 
   search: true
   sitemap: true
   portfolio_image:      "assets/portfolio.png"
   html_lang: "kr"
-  dark_mode: false
+  dark_mode: true
   disqus_shortname: https-dddaong-github-io
 
 plugins:
