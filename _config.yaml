@@ -43,7 +43,7 @@ plainwhite:
 
   search: true
   sitemap: true
-  portfolio_image:      "assets/portfolio.png"
+  portfolio_image:      "https://dddaong.github.io/assets/portfolio.png"
   html_lang: "kr"
   dark_mode: true
   disqus_shortname: https-dddaong-github-io
