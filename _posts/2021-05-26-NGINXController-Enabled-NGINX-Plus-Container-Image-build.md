@@ -330,11 +330,10 @@ sudo docker build --build-arg CONTROLLER_URL=https://<fqdn>/install/controller-a
 
 Build-argument인 CONTROLLER_URL은 Controller 버전에 따라 다를 수 있습니다.
 
-- NGINX Controller v3.10 이전
+- NGINX Controller v3.10 이전  
   `CONTROLLER_URL=https://<fqdn>:8443/1.4/install/controller`
 
-- NGINX Controller v3.11 이후
-
+- NGINX Controller v3.11 이후  
   `CONTROLLER_URL=https://<fqdn>/install/controller-agent`
 
 
