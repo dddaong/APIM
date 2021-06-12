@@ -36,8 +36,7 @@ plainwhite:
       url: "/bigip"
       #url: "https://dddaong.github.io/bigip/"
     - title: NGINX+ Ingress Controller
-      url: "/nginxinc"
-      #url: "https://dddaong.github.io/"
+      url: "https://dddaong.github.io/"
     - title: NGINX Controller + APIM
       url: "https://dddaong.github.io/APIM/"
 
