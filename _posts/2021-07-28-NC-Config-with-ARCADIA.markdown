@@ -36,7 +36,7 @@ Arcadia Finance application은 Stock Budget, Money Transfer, Refer Friend 등의
 
 <u>각 마이크로서비스의 상세는 아래와 같습니다.</u>
 
-![Arcadia_Micro_Services_architecture](images\Arcadia_Micro_Services_architecture.png)
+![Arcadia_Micro_Services_architecture](https://raw.githubusercontent.com/dddaong/APIM/main/_posts/images/Arcadia_Micro_Services_architecture.png)
 
 | App     | URI    | Container Port : Host Port |
 | ------- | ------ | -------------------------- |
@@ -316,7 +316,7 @@ spec:
 
 이번 단계에서는 NGINX Controller 설정을 통해 API GW로 아래와 같이 Config를 수행합니다.
 
-![topology](images\topology.png)
+![topology](https://raw.githubusercontent.com/dddaong/APIM/main/_posts/images/topology.png)
 
 Main App과 Backend는 PHP 스크립트 상, Embedded DNS를 사용하도록 URI가 구성되어, 직접 통신되어야 하므로, 실제 NGINX Controller에서 Config를 수행할 내용은, App2와 App3입니다.
 
