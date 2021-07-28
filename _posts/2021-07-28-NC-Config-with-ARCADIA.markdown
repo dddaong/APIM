@@ -7,6 +7,8 @@ categories: NGINXController Hands-on
 
 Arcadia Finance Application 기준 "NGINX Controller Configuration 따라하기" 입니다.
 
+
+
 # Arcadia and NGINX Controller Configuration
 
 Arcadia Finance Application 설치 및 NGINX Controller ADC, APIM Config Hands-on 예제입니다.
@@ -327,7 +329,7 @@ Main App과 Backend는 PHP 스크립트 상, Embedded DNS를 사용하도록 URI
 
 NGINX Controller의 Environment는 Kubernetes의 Namespace와 유사한 개념으로, 서로 다른 Environment에 속한 요소들은 서로를 참조할 수 없습니다.
 
-![step1_environment](images/step1_env.png)
+![step1_environment](/_posts/images/step1_env.png)
 
 
 
@@ -338,9 +340,9 @@ NGINX Controller의 Environment는 Kubernetes의 Namespace와 유사한 개념�
 Instance를 직접 참조하는 Static한 방식과, Instance Group을 참조하여 해당 Instance Group에 속하는 모든 Instance에 같은 Config를 Push하는 Dynamic한 방식을 선택할 수 있습니다.
 
 이 과정에서는 Static하게 Instance를 선택합니다.
-![step2_gateway](images/step2_gw_1.png)
-![step2_gateway](images/step2_gw_2.png)
-![step2_gateway](images/step2_gw_3.png)
+![step2_gateway](/_posts/images/step2_gw_1.png)
+![step2_gateway](/_posts/images/step2_gw_2.png)
+![step2_gateway](/_posts/images/step2_gw_3.png)
 
 Gateway의 `Hostname (URI Formatted)`는 NGINX Config의 Server Block에 해당합니다.
 
@@ -357,7 +359,7 @@ App의 생성 자체만으로는 아무런 트래픽 제어 효과가 없습니�
 
 실제 트래픽 제어 및 각종 Config는 이 다음 과정의 Component 생성에서 수행하게 됩니다.
 
-![step3_App](images/step3_app.png)
+![step3_App](/_posts/images/step3_app.png)
 
 
 
@@ -367,20 +369,20 @@ App의 생성 자체만으로는 아무런 트래픽 제어 효과가 없습니�
 
 먼저 `/ (Root)` 경로에서 표시할 Webpage인 Main app의 Component를 생성합니다.
 
-![step4_ADC_Component_main](images/step4_comp_mainapp_1.png)
+![step4_ADC_Component_main](/_posts/images/step4_comp_mainapp_1.png)
 
 여기서 참조하는 Gateway에 속한 Instance들에 Config Push가 진행됩니다.
 
 
 
-![step4_ADC_Component_main](images/step4_comp_mainapp_2.png)
+![step4_ADC_Component_main](/_posts/images/step4_comp_mainapp_2.png)
 
 URI 항목에 작성하는 `/ (Root)`는 NGINX Config에서 Location Block으로 들어가게 됩니다.
 이 Config는 NGINX Config에서 Location Directive로 지정됩니다.
 
 
 
-![step4_ADC_Component_main](images/step4_comp_mainapp_3.png)
+![step4_ADC_Component_main](/_posts/images/step4_comp_mainapp_3.png)
 
 `Workload Group`의 `Backend Workload URIs` 항목은 NGINX Config의 `Upstream`에 해당하는 부분입니다.
 `advanced Configuration`에서 상세설정을 수행할 수 있습니다. 이 과정에서는 필요한 설정만을 수행합니다.
@@ -391,7 +393,7 @@ URI 항목에 작성하는 `/ (Root)`는 NGINX Config에서 Location Block으로
 
 > 아래 페이지는 메인 화면에서 `Login`, ID matt / PW ilovef5 를 사용해 로그인한 후에 보이는 화면입니다.
 
-![step4_ADC_Component_main](images/step4_comp_mainapp_4.png)
+![step4_ADC_Component_main](/_posts/images/step4_comp_mainapp_4.png)
 
 
 페이지가 완전하지 않고 일부 Coming Soon 표기된 구역이 확인됩니다.
@@ -404,11 +406,11 @@ URI 항목에 작성하는 `/ (Root)`는 NGINX Config에서 Location Block으로
 
 `Component URI` 부분과 `Backend URI`을 Arcadia Finance Application 설계에 맞춰 설정하는 과정입니다.
 
-![step5_ADC_Component_app2](images/step5_comp_app2_1.png)
-![step5_ADC_Component_app2](images/step5_comp_app2_2.png)
+![step5_ADC_Component_app2](/_posts/images/step5_comp_app2_1.png)
+![step5_ADC_Component_app2](/_posts/images/step5_comp_app2_2.png)
 
-![step5_ADC_Component_app2](images/step5_comp_app2_3.png)
-![step5_ADC_Component_app2](images/step5_comp_app2_4.png)
+![step5_ADC_Component_app2](/_posts/images/step5_comp_app2_3.png)
+![step5_ADC_Component_app2](/_posts/images/step5_comp_app2_4.png)
 
 `/api` 경로의 요청에 대해 App2 Backend로 Request를 전달하는 Config가 Push되고 난 후, 하단과 우측 패널이 더이상 Coming Soon이 아니라 정상적으로 페이지로 표기되는 것이 확인됩니다.
 
@@ -418,10 +420,10 @@ URI 항목에 작성하는 `/ (Root)`는 NGINX Config에서 Location Block으로
 
 마지막으로, 하나 남은 Coming Soon 구역을 정상적인 서비스가 될 수 있도록 App3를 Gateway에서 활성화 해주는 과정을 수행합니다.
 
-![step6_ADC_Component_app3](images/step6_comp_app3_1.png)
-![step6_ADC_Component_app3](images/step6_comp_app3_2.png)
-![step6_ADC_Component_app3](images/step6_comp_app3_3.png)
-![step6_ADC_Component_app3](images/step6_comp_app3_4.png)
+![step6_ADC_Component_app3](/_posts/images/step6_comp_app3_1.png)
+![step6_ADC_Component_app3](/_posts/images/step6_comp_app3_2.png)
+![step6_ADC_Component_app3](/_posts/images/step6_comp_app3_3.png)
+![step6_ADC_Component_app3](/_posts/images/step6_comp_app3_4.png)
 
 페이지 전체에 Coming Soon 구역 없이 정상적인 서비스가 수행되는 것이 확인됩니다.
 
@@ -433,7 +435,7 @@ URI 항목에 작성하는 `/ (Root)`는 NGINX Config에서 Location Block으로
 
 다음 과정에서는 API에 대한 Configuration을 수행할텐데, API Component는 App Component와는 구조가 다소 다르기 때문에 App, API Component 간의 구조 비교 및  Service 메뉴 구조의 이해를 돕기 위해 계층 구조를 확인해보겠습니다.
 
-![Service Resource Hierarchy](images/Service_Resources.png)
+![Service Resource Hierarchy](/_posts/images/Service_Resources.png)
 
 
 
@@ -638,7 +640,7 @@ components:
 
 API Definition은 ADC 과정의 App과 유사하게 API Version 및 Published API의 컨테이너 역할을 수행하며, API Definition의 생성 자체만으로는 아무런 트래픽 제어 효과가 없습니다.
 
-![API_Definition](images/api_1_apidefinition.png)
+![API_Definition](/_posts/images/api_1_apidefinition.png)
 
 
 
@@ -650,13 +652,13 @@ API Version에서 작성할 내용의 대부분은 API Spec을 작성한 OAS3, W
 
 이 과정에서는 앞서 소개한 OAS3 YAML 파일을 사용합니다.
 
-![API_Version_OAS3_YAML](images/api_2_apiversion.png)
+![API_Version_OAS3_YAML](/_posts/images/api_2_apiversion.png)
 
 직전 과정에서 생성한 API Definition을 선택하고, Copy and paste specification text 선택 후, YAML의 내용을 복사 붙여넣기 하면, 이하의 정보들이 자동 입력되는 것을 확인할 수 있습니다.
 
 
 
-![API_Version_Resource_page](images/api_2_apiversion_resource.png)
+![API_Version_Resource_page](/_posts/images/api_2_apiversion_resource.png)
 
 Resource 페이지 각 항목의 편집 화면에서 상세 내용을 확인하면 각 API에 대한 Documentation 및 Required Method 등 상세 설정이 자동 입력된 모습이 확인됩니다. 
 입력된 상세 내용은 Dev Portal에서도 자동 반영됩니다.
@@ -671,7 +673,7 @@ Resource 페이지 각 항목의 편집 화면에서 상세 내용을 확인하�
 
 
 
-![API_Published_API](images/api_3_publishedapi.png)
+![API_Published_API](/_posts/images/api_3_publishedapi.png)
 
 
 
@@ -680,7 +682,7 @@ Base Path는 API 설계에 따라 달라지며 Arcadia Finance API 설계 및 AP
 
 
 
-![API_Published_API](images/api_3_publishedapi_deployment.png)
+![API_Published_API](/_posts/images/api_3_publishedapi_deployment.png)
 
 이 과정에서 생성할 Component가 속할 Environment, App를 선택합니다.
 
@@ -688,7 +690,7 @@ Base Path는 API 설계에 따라 달라지며 Arcadia Finance API 설계 및 AP
 
 
 
-![API_Published_API_Routing_1](images/api_3_publishedapi_routing_1.png)
+![API_Published_API_Routing_1](/_posts/images/api_3_publishedapi_routing_1.png)
 
 Routing 화면을 확인해보면, API Version에 작성된 API 리스트가 자동으로 화면에 나타난 것을 볼 수 있습니다.
 각 항목을 살펴보면, API Path가 `/api`로 시작하는 것과 `/trading`으로 시작하는 것으로 구분됩니다.
@@ -701,25 +703,25 @@ Routing 화면을 확인해보면, API Version에 작성된 API 리스트가 자
 
 
 
-![API_Published_API_Routing_1](images/api_3_publishedapi_routing_2.png)
+![API_Published_API_Routing_1](/_posts/images/api_3_publishedapi_routing_2.png)
 
 
 
-![API_Published_API_Routing_1](images/api_3_publishedapi_routing_3.png)
+![API_Published_API_Routing_1](/_posts/images/api_3_publishedapi_routing_3.png)
 
-![API_Published_API_Routing_1](images/api_3_publishedapi_routing_4.png)
-
-
-
-![API_Published_API_Routing_1](images/api_3_publishedapi_routing_5.png)
+![API_Published_API_Routing_1](/_posts/images/api_3_publishedapi_routing_4.png)
 
 
 
-![API_Published_API_Routing_1](images/api_3_publishedapi_routing_6.png)
+![API_Published_API_Routing_1](/_posts/images/api_3_publishedapi_routing_5.png)
 
 
 
-![API_Published_API_Routing_1](images/api_3_publishedapi_routing_7.png)
+![API_Published_API_Routing_1](/_posts/images/api_3_publishedapi_routing_6.png)
+
+
+
+![API_Published_API_Routing_1](/_posts/images/api_3_publishedapi_routing_7.png)
 
 
 
